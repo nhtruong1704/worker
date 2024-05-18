@@ -1,10 +1,9 @@
 name: CI/CD Pipeline
 on:
   push:
-    branches: ["main"]
   pull_request:
-    branches: ["main"]
   workflow_dispatch:
+
 jobs:
   test:
     name: Unit tests
@@ -34,5 +33,3 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Push to DockerHub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/work-service:latest
-
-
