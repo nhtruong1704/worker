@@ -21,3 +21,7 @@ async def delete_work(id: int):
     query = workers.delete().where(workers.c.id == id)
     return await database.execute(query=query)
 
+
+
+
+
